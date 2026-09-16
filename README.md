@@ -12,5 +12,11 @@ Site-modelo responsivo para pizzaria artesanal em Mogi Guaçu/SP.
 - Promoções, história, avaliações, delivery, FAQ, mapa/contato e horários
 - Preparado para GitHub + Vercel
 
+## Rodar localmente
+```bash
+npm install
+npm run dev
+```
+
 ## Observação sobre o vídeo
-O componente está pronto para `/public/pizza-loop.mp4`. Enquanto o arquivo final de vídeo não estiver presente, o site exibe uma composição visual gastronômica. Ao adicionar o MP4 final, o vídeo assume o lugar sem alterar o código.
+O componente está pronto para `/public/pizza-loop.mp4`. Enquanto o arquivo final de vídeo não estiver presente, o site exibe automaticamente uma composição visual animada com fotografia gastronômica. Ao adicionar o MP4 final, o vídeo assume o lugar sem alterar o código.
