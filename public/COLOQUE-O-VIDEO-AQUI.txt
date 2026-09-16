@@ -1,0 +1,1 @@
+Adicione nesta pasta o arquivo final com o nome pizza-loop.mp4. O vídeo deve ter 8 segundos, ser realista e usar loop suave. O site já está preparado para reproduzi-lo automaticamente.
