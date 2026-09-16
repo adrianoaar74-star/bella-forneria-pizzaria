@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { ShoppingCart, MessageCircle, Instagram, Facebook, X, Flame, Star, Clock, MapPin, Plus, Minus, Trash2, ChevronDown } from "lucide-react";
 
 const WHATSAPP = "5519999999999";
@@ -26,19 +26,6 @@ export default function Home(){
   const [cat,setCat]=useState("Tradicionais");
   const [cart,setCart]=useState([]);
   const [open,setOpen]=useState(null);
-  const [videoUrl,setVideoUrl]=useState("");
-
-  useEffect(()=>{
-    fetch("/pizza-loop.b64")
-      .then(r=>r.text())
-      .then(b64=>{
-        const bin=atob(b64.trim());
-        const bytes=new Uint8Array(bin.length);
-        for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
-        setVideoUrl(URL.createObjectURL(new Blob([bytes],{type:"video/mp4"})));
-      })
-      .catch(()=>{});
-  },[]);
 
   const add=(p,size="Média",crust="Tradicional",extra=[])=>{
     const unit=p.price+sizes[size]+crusts[crust]+extra.reduce((s,e)=>s+extras[e],0);
@@ -78,7 +65,7 @@ export default function Home(){
       <div className="sectionHead"><span className="eyebrow dark">FEITO DIANTE DOS SEUS OLHOS</span><h2>O ritual da pizza perfeita</h2><p>Da massa aberta à mão aos ingredientes frescos e ao forno: poucos segundos que explicam nosso cuidado.</p></div>
       <div className="videoFrame">
         <video autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=90">
-          {videoUrl&&<source src={videoUrl} type="video/mp4"/>}
+          <source src="/pizza-loop.mp4" type="video/mp4"/>
         </video>
         <div className="videoFallback"></div>
         <div className="videoText"><span>Bella Forneria</span><strong>Da massa ao forno, sabor que conquista.</strong></div>
@@ -108,7 +95,11 @@ export default function Home(){
     <section className="reviews section">
       <div className="sectionHead"><span className="eyebrow dark">QUEM PROVA, CONTA</span><h2>Momentos que viram tradição</h2></div>
       <div className="reviewGrid">
-        {[["Massa leve, borda perfeita e ingredientes muito bem equilibrados.","Marina A."],["Pedido simples pelo WhatsApp e pizza chegou com ótima apresentação.","Carlos R."],["A Parma & Rúcula virou a favorita aqui de casa.","Fernanda M."]].map(([t,n])=><blockquote key={n}><div className="stars">★★★★★</div><p>“{t}”</p><footer>{n}</footer></blockquote>)}
+        {[
+          ["“Massa leve, borda perfeita e ingredientes muito bem equilibrados.”","Marina A."],
+          ["“Pedido simples pelo WhatsApp e pizza chegou com ótima apresentação.”","Carlos R."],
+          ["“A Parma & Rúcula virou a favorita aqui de casa.”","Fernanda M."]
+        ].map(([t,n])=><blockquote key={n}><div className="stars">★★★★★</div><p>{t}</p><footer>{n}</footer></blockquote>)}
       </div>
     </section>
 
@@ -119,7 +110,12 @@ export default function Home(){
 
     <section className="faq section">
       <div className="sectionHead"><span className="eyebrow dark">DÚVIDAS FREQUENTES</span><h2>Antes de pedir</h2></div>
-      {[["Vocês fazem entrega?","Sim. Este site-modelo está preparado para receber pedidos de delivery pelo WhatsApp."],["Posso escolher tamanho e borda?","Sim. Ao adicionar uma pizza, escolha tamanho, borda e adicionais."],["Quais formas de pagamento?","O pedido enviado ao WhatsApp possui campo para combinar a forma de pagamento."],["Os dados do endereço são reais?","Não. Este é um site demonstrativo; telefone, endereço e perfis sociais são fictícios."]].map(([q,a])=><details key={q}><summary>{q}<ChevronDown/></summary><p>{a}</p></details>)}
+      {[
+        ["Vocês fazem entrega?","Sim. Este site-modelo está preparado para receber pedidos de delivery pelo WhatsApp."],
+        ["Posso escolher tamanho e borda?","Sim. Ao adicionar uma pizza, escolha tamanho, borda e adicionais."],
+        ["Quais formas de pagamento?","O pedido enviado ao WhatsApp possui campo para combinar a forma de pagamento."],
+        ["Os dados do endereço são reais?","Não. Este é um site demonstrativo; telefone, endereço e perfis sociais são fictícios."]
+      ].map(([q,a],i)=><details key={q}><summary>{q}<ChevronDown/></summary><p>{a}</p></details>)}
     </section>
 
     <section id="contato" className="contact section">
