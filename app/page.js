@@ -12,8 +12,8 @@ const pizzas = [
   {id:"parma", name:"Parma & Rúcula", cat:"Especiais", desc:"Muçarela, presunto cru, rúcula, parmesão e redução balsâmica.", price:69.9, img:"https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=1000&q=85"},
   {id:"quattro", name:"Quattro Formaggi", cat:"Especiais", desc:"Muçarela, gorgonzola, parmesão e provolone.", price:67.9, img:"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1000&q=85"},
   {id:"funghi", name:"Funghi & Alho-Poró", cat:"Especiais", desc:"Muçarela, cogumelos, alho-poró, parmesão e ervas.", price:65.9, img:"https://images.unsplash.com/photo-1566843972142-a7fcb70de55a?auto=format&fit=crop&w=1000&q=85"},
-  {id:"choco", name:"Chocolate & Morango", cat:"Doces", desc:"Chocolate cremoso, morangos e toque de açúcar.", price:54.9, img:"https://images.unsplash.com/photo-1573821663912-569905455b1c?auto=format&fit=crop&w=1000&q=85"},
-  {id:"banana", name:"Banana Caramelada", cat:"Doces", desc:"Banana, canela, açúcar mascavo e doce de leite.", price:51.9, img:"https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=1000&q=85"}
+  {id:"choco", name:"Chocolate & Morango", cat:"Doces", desc:"Chocolate cremoso, morangos e toque de açúcar.", price:54.9, img:"/chocolate-morango.webp"},
+  {id:"banana", name:"Banana Caramelada", cat:"Doces", desc:"Banana, canela, açúcar mascavo e doce de leite.", price:51.9, img:"/banana-caramelada.webp"}
 ];
 
 const sizes = { "Média": 0, "Grande": 12, "Família": 22 };
